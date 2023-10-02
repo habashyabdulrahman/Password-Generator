@@ -1,92 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generate</title>
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/4c47838536.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/4c47838536.js"
+      crossorigin="anonymous"></script>
     <!-- Style -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- INSERT HTML HERE -->
-<div class="container">
-	<h2>Password Generator</h2>
-	<div class="result-container">
-		<span id="result"></span>
-		<button class="btn" id="clipboard">
-			<i class="far fa-clipboard"></i>
-		</button>
-	</div>
-	<div class="settings">
-		<div class="setting">
-			<label>Password length</label>
-			<input type="number" id="length" min='8' max='30' value='16' />
-		</div>
-		<div class="setting">
-			<label>Include uppercase letters (ABCDFG)</label> 
-			<input type="checkbox" id="uppercase" checked />
-		</div>
-		<div class="setting">
-			<label>Include lowercase letters (abcdefg)</label> 
-			<input type="checkbox" id="lowercase" checked />
-		</div>
-		<div class="setting">
-			<label>Include numbers (123456789)</label> 
-			<input type="checkbox" id="numbers" checked />
-		</div>
-		<div class="setting">
-			<label>Include symbols (#$^%!&@)</label> 
-			<input type="checkbox" id="symbols" checked />
-		</div>
-	</div>
-	<button class="btn btn-large" id="generate">
-		Generate password
-	</button>
-</div>
+    <div class="container">
+      <h2>Password Generator</h2>
+      <div class="result-container">
+        <span id="result"></span>
+        <button class="btn" id="clipboard">
+          <i class="far fa-clipboard"></i>
+        </button>
+      </div>
+      <div class="settings">
+        <div class="setting">
+          <label>Password length</label>
+          <div class="cont">
+            <button id="decrement" onclick="stepper(this)">-</button>
+            <input
+              type="number"
+              id="length"
+              min="8"
+              max="30"
+              value="16"
+              step="1"
+              readonly />
+            <button id="increment" onclick="stepper(this)">+</button>
+          </div>
+        </div>
+        <div class="setting">
+          <label>Include uppercase letters (ABCDFG)</label>
+          <input type="checkbox" id="uppercase" checked />
+        </div>
+        <div class="setting">
+          <label>Include lowercase letters (abcdefg)</label>
+          <input type="checkbox" id="lowercase" checked />
+        </div>
+        <div class="setting">
+          <label>Include numbers (123456789)</label>
+          <input type="checkbox" id="numbers" checked />
+        </div>
+        <div class="setting">
+          <label>Include symbols (#$^%!&@)</label>
+          <input type="checkbox" id="symbols" checked />
+        </div>
+      </div>
+      <button class="btn btn-large" id="generate">Generate password</button>
+    </div>
 
-<!-- SOCIAL PANEL HTML -->
-<div class="social-panel-container">
-	<div class="social-panel">
-		<p>Created with <i class="fa fa-heart"></i> by
-			<a target="_blank" href="https://habashyabdulrahman.com">Ra's</a></p>
-		<button class="close-btn"><i class="fas fa-times"></i></button>
-		<h4>Get in touch on</h4>
-		<ul>
-			<li>
-				<a href="https://twitter.com/H0Abdulrahman" target="_blank">
-					<i class="fab fa-twitter"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://linkedin.com/in/habashyabdulrahman" target="_blank">
-					<i class="fab fa-linkedin"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://facebook.com/habashyabdulrahman" target="_blank">
-					<i class="fab fa-facebook"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://instagram.com/habashysklana" target="_blank">
-					<i class="fab fa-instagram"></i>
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<button class="floating-btn">
-	Get in Touch
-</button>
+    <!-- SOCIAL PANEL HTML -->
+    <div class="social-panel-container">
+      <div class="social-panel">
+        <p>
+          Created with <i class="fa fa-heart"></i> by
+          <a target="_blank" href="https://habashyabdulrahman.com">Ra's</a>
+        </p>
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+        <h4>Get in touch on</h4>
+        <ul>
+          <li>
+            <a href="https://twitter.com/H0Abdulrahman" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/habashyabdulrahman"
+              target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com/habashyabdulrahman" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/habashysklana" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button class="floating-btn">Get in Touch</button>
 
-<div class="floating-text">
-	Part of <a href="https://habashyabdulrahman.com" target="_blank">Ra's</a>
-</div>
+    <div class="floating-text">
+      Part of <a href="https://habashyabdulrahman.com" target="_blank">Ra's</a>
+    </div>
 
-<!-- JS -->
-<script src="main.js"></script>
-</body>
+    <!-- JS -->
+    <script src="main.js"></script>
+  </body>
 </html>

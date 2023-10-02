@@ -1,3 +1,22 @@
+const myInput = document.getElementById("length");
+function stepper(button) {
+  let id = button.getAttribute("id");
+  let min = myInput.getAttribute("min");
+  let max = myInput.getAttribute("max");
+  let step = myInput.getAttribute("step");
+  let val = myInput.getAttribute("value");
+  
+  let calcStep = (id == "increment") ? (step*1) :
+  (step * -1)
+  let newValue = parseInt(val) + calcStep;
+  if(newValue >= min && newValue <= max){
+    myInput.setAttribute("value", newValue)
+  }
+}
+
+
+
+
 const resultEl = document.getElementById("result");
 const lengthEl = document.getElementById("length");
 const uppercaseEl = document.getElementById("uppercase");
@@ -27,7 +46,7 @@ clipboard.addEventListener("click", () => {
   textarea.select();
   document.execCommand("copy");
   textarea.remove();
-  alert("Password copied to clipboard");
+  
 });
 
 generate.addEventListener("click", () => {
