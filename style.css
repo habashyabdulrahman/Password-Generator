@@ -149,13 +149,8 @@ input::-webkit-inner-spin-button {
 	#add {
 		display: none;
 	}
-	#adds {
-		display: block;
-	}
 }
-#adds {
-	display: none;
-}
+
 
 /* SOCIAL PANEL CSS */
 .social-panel-container {
