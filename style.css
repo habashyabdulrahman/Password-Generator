@@ -16,6 +16,12 @@ body {
 	min-height: 100vh;
 }
 
+main {
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+}
+
 p {
 	margin: 5px 0;
 }
@@ -301,4 +307,11 @@ input::-webkit-inner-spin-button {
 	.floating-btn {
 		right: 10px;
 	}
+}
+
+.adds {
+	margin: 2rem 0;
+}
+.add {
+	margin: 5rem 0;
 }
