@@ -142,13 +142,19 @@ input::-webkit-inner-spin-button {
 	margin: 15px 0;
 }
 /*============================================== Media query ============================================================ */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
 	.result-container {
 		font-size: 14px;
 	}
 	#add {
 		display: none;
 	}
+	#adds {
+		display: block;
+	}
+}
+#adds {
+	display: none;
 }
 
 /* SOCIAL PANEL CSS */
