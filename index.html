@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generate</title>
-    <link rel="shortcut icon" href="padlock.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/4c47838536.js"
       crossorigin="anonymous"></script>
     <!-- Style -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="/manifest.json">
+
   </head>
   <body>
     <!-- adds -->
@@ -21,7 +23,7 @@
             alt="ylliX - Online Advertising Network" /></a></noscript>
     </div>
     <!-- INSERT HTML HERE -->
-     <main>
+    <main>
       <div id="add">
         <script type="text/javascript" src="https://udbaa.com/bnr.php?section=General&pub=365279&format=300x250&ga=g"></script>
         <noscript><a href="https://yllix.com/publishers/365279" target="_blank"><img
@@ -29,57 +31,57 @@
               alt="ylliX - Online Advertising Network" /></a></noscript>
       </div>
       <div class="container">
-      <h2>Password Generator</h2>
-      <div class="result-container">
-        <span id="result"></span>
-        <button class="btn hover" id="clipboard">
-          <i class="far fa-clipboard"></i>
-        </button>
-      </div>
-      <div class="settings">
-        <div class="setting">
-          <label>Password length</label>
-          <div class="cont">
-            <button id="decrement" onclick="stepper(this)">-</button>
-            <input
-              type="number"
-              id="length"
-              min="8"
-              max="30"
-              value="16"
-              step="1"
-              readonly />
-            <button id="increment" onclick="stepper(this)">+</button>
+        <h2>Password Generator</h2>
+        <div class="result-container">
+          <span id="result"></span>
+          <button class="btn hover" id="clipboard">
+            <i class="far fa-clipboard"></i>
+          </button>
+        </div>
+        <div class="settings">
+          <div class="setting">
+            <label>Password length</label>
+            <div class="cont">
+              <button id="decrement" onclick="stepper(this)">-</button>
+              <input
+                type="number"
+                id="length"
+                min="8"
+                max="30"
+                value="16"
+                step="1"
+                readonly />
+              <button id="increment" onclick="stepper(this)">+</button>
+            </div>
+          </div>
+          <div class="setting">
+            <label>Include uppercase letters (ABCDFG)</label>
+            <input type="checkbox" id="uppercase" checked />
+          </div>
+          <div class="setting">
+            <label>Include lowercase letters (abcdefg)</label>
+            <input type="checkbox" id="lowercase" checked />
+          </div>
+          <div class="setting">
+            <label>Include numbers (123456789)</label>
+            <input type="checkbox" id="numbers" checked />
+          </div>
+          <div class="setting">
+            <label>Include symbols (#$^%!&@)</label>
+            <input type="checkbox" id="symbols" checked />
           </div>
         </div>
-        <div class="setting">
-          <label>Include uppercase letters (ABCDFG)</label>
-          <input type="checkbox" id="uppercase" checked />
-        </div>
-        <div class="setting">
-          <label>Include lowercase letters (abcdefg)</label>
-          <input type="checkbox" id="lowercase" checked />
-        </div>
-        <div class="setting">
-          <label>Include numbers (123456789)</label>
-          <input type="checkbox" id="numbers" checked />
-        </div>
-        <div class="setting">
-          <label>Include symbols (#$^%!&@)</label>
-          <input type="checkbox" id="symbols" checked />
-        </div>
+        <button class="btn btn-large" id="generate">Generate password</button>
       </div>
-      <button class="btn btn-large" id="generate">Generate password</button>
-    </div>
-    <div id="add">
-      <script type="text/javascript"
-        src="https://udbaa.com/bnr.php?section=General&pub=365279&format=300x250&ga=g"></script>
-      <noscript><a href="https://yllix.com/publishers/365279" target="_blank"><img
-            src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
-            style="border:none;margin:0;padding:0;vertical-align:baseline;"
-            alt="ylliX - Online Advertising Network" /></a></noscript>
-    </div>
-     </main>
+      <div id="add">
+        <script type="text/javascript"
+          src="https://udbaa.com/bnr.php?section=General&pub=365279&format=300x250&ga=g"></script>
+        <noscript><a href="https://yllix.com/publishers/365279" target="_blank"><img
+              src="//ylx-aff.advertica-cdn.com/pub/300x250.png"
+              style="border:none;margin:0;padding:0;vertical-align:baseline;"
+              alt="ylliX - Online Advertising Network" /></a></noscript>
+      </div>
+    </main>
     <!-- SOCIAL PANEL HTML -->
     <div class="social-panel-container">
       <div class="social-panel">
