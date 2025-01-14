@@ -8,18 +8,26 @@ const urlsToCache = [
   "/icon.png"
 ];
 
-self.addEventListener("install", event => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(urlsToCache);
-    })
-  );
-});
-
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
+    caches
+      .open("password-cache-v1")
+      .then((cache) => {
+        return Promise.allSettled(
+          urlsToCache.map((url) => cache.add(url))
+        ).then((results) => {
+          results.forEach((result) => {
+            if (result.status === "rejected") {
+              console.error(
+                `Failed to cache ${result.reason.url}:`,
+                result.reason
+              );
+            }
+          });
+        });
+      })
+      .catch((error) => {
+        console.error("Failed to open cache:", error);
+      })
   );
 });
